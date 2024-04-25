@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Root = () => {
     return (
         <div>
-            <Navbar></Navbar>
+            <div className="h-[68px]"><Navbar></Navbar></div>
             <Outlet></Outlet>     
             <ToastContainer position="top-center"/>       
         </div>

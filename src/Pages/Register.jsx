@@ -6,7 +6,7 @@ import auth from '../Firebase/firebase.config';
 import { toast } from 'react-toastify';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser, logOut } = useContext(AuthContext)
 
 
     const handleSignUp = (e) => {
@@ -16,6 +16,20 @@ const Register = () => {
         const name = e.target.name.value;
         const photo = e.target.photo.value;
         console.log(email, password, name, photo);
+
+        // Password verification
+        if (password.length < 6) {
+            return toast.error('Password use must be 6 character')
+        }
+
+        if (/^(?=.*[A-Z])/gm.test(password) === false) {
+            return toast.error("Uppercase letter is required")
+        }
+
+        if (/^(?=.*[a-z])/gm.test(password) === false) {
+            return toast.error("Lowercase letter is required")
+        }
+
 
         createUser(email, password)
             .then(result => {
@@ -27,6 +41,11 @@ const Register = () => {
                     .then(res => {
                         console.log(res)
                         toast.success("Account created successfully!");
+                        logOut()
+                            .then(result => {
+                                console.log(result)
+                            })
+                            .catch(err => console.error(err));
                     })
                     .catch(err => console.log(err));
             })
@@ -34,7 +53,7 @@ const Register = () => {
                 console.log(err);
                 toast.error("email already used please enter a valid email")
             })
-            e.target.reset();
+        e.target.reset();
     }
     return (
         <div className="hero min-h-screen bg-base-200 ">
