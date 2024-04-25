@@ -45,7 +45,7 @@ const Register = () => {
                     <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn text-white text-xl bg-[#696CFF] hover:bg-[#4043f5]">Register</button>
+                    <button className="btn text-white text-xl bg-[#F95A65] hover:bg-[#f24652]">Register</button>
                 </div>
             </form>
             <div>
