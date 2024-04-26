@@ -19,9 +19,9 @@ const Navbar = () => {
 
     const navLinks = <>
         <li><NavLink to='/' className={'text-sm font-bold'}>Home</NavLink></li>
-        <li><NavLink to='/blogs' className={'text-sm font-bold'}>Blog</NavLink></li>
-        <li><NavLink to='/profile' className={'text-sm font-bold'}>Update Profile</NavLink></li>
-        <li><NavLink to='/contact' className={'text-sm font-bold'}>Contact</NavLink></li>
+        <li><NavLink to='/blogs' className={'text-sm font-bold'}>All Tourists Spot</NavLink></li>
+        <li><NavLink to='/addTourist' className={'text-sm font-bold'}>Add Tourists Spot</NavLink></li>
+        <li><NavLink to='/contact' className={'text-sm font-bold'}>My List</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100 shadow-md lg:px-16 fixed z-10">
