@@ -34,6 +34,7 @@ const Router = createBrowserRouter([
                 path: '/details/:id',
                 element: <SpotsDetails></SpotsDetails>,
                 loader: ({params}) => fetch(`https://assignment-ten-server-bay.vercel.app/spots/${params.id}`)
+                
             }
         ])
     },
