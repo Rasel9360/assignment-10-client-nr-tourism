@@ -24,7 +24,7 @@ const AddTourist = () => {
         const newSpots = {name,country,location,cost,seasonality,time,visitor,photo,email,userName,description, userId: user.email};
         console.log(newSpots);
 
-        fetch('http://localhost:5000/spots', {
+        fetch('https://assignment-ten-server-bay.vercel.app/spots', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -42,6 +42,7 @@ const AddTourist = () => {
                   });
             }
         })
+        form.reset();
     }
 
     return (
