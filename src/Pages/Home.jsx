@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import SpotCart from '../Components/SpotCart';
 import Faq from '../Components/Faq';
 import NewsLetter from '../Components/NewsLetter';
+import Footer from '../Components/Footer';
 
 const Home = () => {
     const touristSpots = useLoaderData()
