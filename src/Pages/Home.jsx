@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from '../Components/Banner';
 import { useLoaderData } from 'react-router-dom';
 import SpotCart from '../Components/SpotCart';
+import Faq from '../Components/Faq';
 
 const Home = () => {
     const touristSpots = useLoaderData()
@@ -17,6 +18,10 @@ const Home = () => {
                         spot={spot}>
                     </SpotCart>)
                 }
+            </div>
+            {/* Faq container */}
+            <div>
+                <Faq></Faq>
             </div>
         </div>
     );
