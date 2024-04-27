@@ -7,11 +7,14 @@ import Register from "../Pages/Register";
 import Root from "../Pages/Root";
 import AddTourist from "../Pages/AddTourist";
 import SpotsDetails from "../Components/SpotsDetails";
+import AllTouristSpots from "../Pages/AllTouristSpots";
+import ErrorPage from "../Pages/ErrorPage";
 
 const Router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children:([
             {
                 path: '/',
@@ -35,6 +38,11 @@ const Router = createBrowserRouter([
                 element: <SpotsDetails></SpotsDetails>,
                 loader: ({params}) => fetch(`https://assignment-ten-server-bay.vercel.app/spots/${params.id}`)
                 
+            },
+            {
+                path: '/allTouristSpots',
+                element: <AllTouristSpots></AllTouristSpots>,
+                loader: ()=> fetch('https://assignment-ten-server-bay.vercel.app/spots')
             }
         ])
     },
