@@ -3,6 +3,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { MdDeleteForever } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const MyList = () => {
@@ -20,6 +21,7 @@ const MyList = () => {
             });
     }, [user]);
 
+    // Delete data from server
     const handleDelete = (_id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -31,7 +33,7 @@ const MyList = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/myProduct/${_id}`, {
+                fetch(`https://assignment-ten-server-bay.vercel.app/myProduct/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -49,6 +51,21 @@ const MyList = () => {
             }
         });
     }
+
+    // const handleUpdate = (_id) =>{
+    //     console.log(_id)
+    //     fetch(`http://localhost:5000/myProduct/${_id}`,{
+    //         method: 'PUT',
+    //         headers:{
+    //             "content-type": "application/json"
+    //         },
+    //         body: JSON.stringify
+    //     })
+    //     .then(res => res.json)
+    //     .then(data => {
+    //         console.log(data);
+    //     })
+    // }
 
     return (
         <div className="w-11/12 mx-auto shadow-xl p-10">
@@ -78,7 +95,7 @@ const MyList = () => {
                                         <td>{spot.location}</td>
                                         <td>{spot.cost} taka per person</td>
                                         <td><button onClick={() => (handleDelete(spot._id))} className="text-xl text-red-700 "><MdDeleteForever /></button></td>
-                                        <td><button className="text-xl"><FaEdit /></button></td>
+                                        <td><Link to={`/update/${spot._id}`}><button className="text-xl"><FaEdit /></button></Link></td>
                                     </tr>
                                 )
                             }

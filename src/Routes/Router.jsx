@@ -10,6 +10,7 @@ import SpotsDetails from "../Components/SpotsDetails";
 import AllTouristSpots from "../Pages/AllTouristSpots";
 import ErrorPage from "../Pages/ErrorPage";
 import MyList from "../Pages/MyList";
+import UpdateSpots from "../Pages/UpdateSpots";
 
 const Router = createBrowserRouter([
     {
@@ -45,9 +46,12 @@ const Router = createBrowserRouter([
                 element: <MyList></MyList>,
             },
             {
+                path: '/update/:id',
+                element: <UpdateSpots></UpdateSpots>,
+            },
+            {
                 path: '/allTouristSpots',
                 element: <AllTouristSpots></AllTouristSpots>,
-                loader: () => fetch('https://assignment-ten-server-bay.vercel.app/spots')
             }
         ])
     },
