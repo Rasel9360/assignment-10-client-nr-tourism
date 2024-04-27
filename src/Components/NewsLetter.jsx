@@ -26,70 +26,34 @@ const NewsLetter = () => {
             </div>
             {showModal && (
                 <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
-                    <div className="bg-white p-8 rounded-md max-w-md">
-                    <button onClick={closeModal} className="border p-2 rounded-full text-[#F95A65] text-lg font-bold font-serif">X</button>
+                    <div className="bg-white p-8 rounded-md max-w-md relative">
+                        <button onClick={closeModal} className="border p-2 bg-[#f8ebec] text-center rounded-full text-[#F95A65] text-lg font-bold font-serif absolute right-3 top-3">X</button>
                         <h2 className="text-xl mb-4 text-center font-serif font-bold">Sign Up to our Newsletter</h2>
                         <form onSubmit={handleSubmit}>
                             <div>
+                                <div className='flex gap-3'>
+                                    <div>
+                                        <input
+                                            type="text"
+                                            className="block w-full border border-gray-300 rounded-md shadow-sm mb-4 p-2"
+                                            placeholder="Enter first name"
+                                            required
+                                        />
+                                    </div>
+                                    <div>
+                                        <input
+                                            type="text"
+                                            className="block w-full border border-gray-300 rounded-md shadow-sm mb-4 p-2"
+                                            placeholder="Enter last name"
+                                            required
+                                        />
+                                    </div>
+                                </div>
                                 <div>
                                     <input
                                         type="email"
                                         className="block w-full border border-gray-300 rounded-md shadow-sm mb-4 p-2"
                                         placeholder="Enter your email"
-                                        required
-                                    />
-                                </div>
-                            </div>
-                            <div className='flex gap-3'>
-                                <div>
-                                    <input
-                                        type="text"
-                                        className="block w-full border border-gray-300 rounded-md shadow-sm mb-4 p-2"
-                                        placeholder="Enter first name"
-                                        required
-                                    />
-                                </div>
-                                <div>
-                                    <input
-                                        type="text"
-                                        className="block w-full border border-gray-300 rounded-md shadow-sm mb-4 p-2"
-                                        placeholder="Enter last name"
-                                        required
-                                    />
-                                </div>
-                            </div>
-                            <div className='flex gap-3'>
-                                <div>
-                                    <input
-                                        type="text"
-                                        className="block w-full border border-gray-300 rounded-md shadow-sm mb-4 p-2"
-                                        placeholder="Country"
-                                        required
-                                    />
-                                </div>
-                                <div>
-                                    <input
-                                        type="text"
-                                        className="block w-full border border-gray-300 rounded-md shadow-sm mb-4 p-2"
-                                        placeholder="Existing Customer"
-                                        required
-                                    />
-                                </div>
-                            </div>
-                            <div className='flex gap-3'>
-                                <div>
-                                    <input
-                                        type="text"
-                                        className="block w-full border border-gray-300 rounded-md shadow-sm mb-4 p-2"
-                                        placeholder="Company name"
-                                        required
-                                    />
-                                </div>
-                                <div>
-                                    <input
-                                        type="text"
-                                        className="block w-full border border-gray-300 rounded-md shadow-sm mb-4 p-2"
-                                        placeholder="Company type"
                                         required
                                     />
                                 </div>
