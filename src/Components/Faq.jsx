@@ -1,12 +1,15 @@
 import Lottie from "lottie-react";
 import FaqAnimation from "../../public/Faq.json";
+import { Slide } from "react-awesome-reveal";
 
 const Faq = () => {
     return (
         <section className="  w-11/12 mx-auto">
             <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
-                <h2 className="text-2xl font-semibold sm:text-4xl text-center font-serif mt-10">Frequently Asked Questions</h2>
-                <p className='md:w-[60%] text-center mx-auto mt-3 mb-10 text-lg'>Our FAQ section provides answers to common questions about travel and tourism, offering valuable insights to enhance your journey. From destination recommendations to practical travel tips, we aim to support travelers of all experience levels in planning memorable adventures.</p>
+                <Slide direction="up" triggerOnce>
+                    <h2 className="text-2xl font-semibold sm:text-4xl text-center font-serif mt-10">Frequently Asked Questions</h2>
+                    <p className='md:w-[60%] text-center mx-auto mt-3 mb-10 text-lg'>Our FAQ section provides answers to common questions about travel and tourism, offering valuable insights to enhance your journey. From destination recommendations to practical travel tips, we aim to support travelers of all experience levels in planning memorable adventures.</p>
+                </Slide>
                 <div className="md:flex justify-center items-center gap-10">
                     <div className="md:w-1/2">
                         <Lottie animationData={FaqAnimation} />
