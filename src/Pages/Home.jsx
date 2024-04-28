@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Banner from '../Components/Banner';
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import SpotCart from '../Components/SpotCart';
@@ -6,11 +6,24 @@ import Faq from '../Components/Faq';
 import NewsLetter from '../Components/NewsLetter';
 import { Helmet } from 'react-helmet';
 import { Fade, Slide } from "react-awesome-reveal";
+import CountryCart from '../Components/CountryCart';
 
 const Home = () => {
     const touristSpots = useLoaderData()
+    const [country, setCountry] = useState([])
 
     const navigation = useNavigation();
+
+    useEffect(()=>{
+        fetch('https://assignment-ten-server-bay.vercel.app/country')
+        .then(res => res.json())
+        .then(data =>{
+            // console.log(data);
+            setCountry(data)
+        })
+    },[])
+
+
 
     if (navigation.state === "loading") {
         return <div className="flex min-h-screen justify-center items-center mt-28"><span className="loading loading-bars loading-lg text-[#F95A65]"></span></div>
@@ -37,6 +50,14 @@ const Home = () => {
                         key={spot._id}
                         spot={spot}>
                     </SpotCart>)
+                }
+            </div>
+            {/* Country Container */}
+            <h2 className='text-4xl font-serif font-semibold text-center mt-8'>Countries</h2>
+            <hr className='w-11/12 mx-auto mt-4 mb-8' />
+            <div className='grid md:grid-cols-3 gap-8 w-11/12 mx-auto'>
+                {
+                    country.map((c,i) => <CountryCart key={i} country={c}></CountryCart>)
                 }
             </div>
             {/* Faq container */}
