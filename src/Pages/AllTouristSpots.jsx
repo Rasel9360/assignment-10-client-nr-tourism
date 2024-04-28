@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router-dom";
-import SpotCart from "../Components/SpotCart";
 import AllSpotsCart from "../Components/AllSpotsCart";
 
 const AllTouristSpots = () => {
     const allSpots = useLoaderData();
+    console.log(allSpots);
     return (
         <div>
             <h2 className="text-4xl font-serif font-semibold text-center bg-[#f8ebec] p-6 mb-8">All Tourist Spots</h2>

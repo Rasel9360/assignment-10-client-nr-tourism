@@ -52,20 +52,6 @@ const MyList = () => {
         });
     }
 
-    // const handleUpdate = (_id) =>{
-    //     console.log(_id)
-    //     fetch(`http://localhost:5000/myProduct/${_id}`,{
-    //         method: 'PUT',
-    //         headers:{
-    //             "content-type": "application/json"
-    //         },
-    //         body: JSON.stringify
-    //     })
-    //     .then(res => res.json)
-    //     .then(data => {
-    //         console.log(data);
-    //     })
-    // }
 
     return (
         <div className="w-11/12 mx-auto shadow-xl p-10">

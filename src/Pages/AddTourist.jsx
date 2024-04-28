@@ -8,7 +8,6 @@ const AddTourist = () => {
 
     const handleAddTourist = event => {
         event.preventDefault();
-        // const userId = user
         const form = event.target;
         const name = form.name.value;
         const country = form.country.value;

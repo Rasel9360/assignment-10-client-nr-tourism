@@ -52,6 +52,7 @@ const Router = createBrowserRouter([
             {
                 path: '/allTouristSpots',
                 element: <AllTouristSpots></AllTouristSpots>,
+                loader: () => fetch('https://assignment-ten-server-bay.vercel.app/spots')
             }
         ])
     },
