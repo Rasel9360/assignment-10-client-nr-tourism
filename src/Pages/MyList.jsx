@@ -3,12 +3,14 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { MdDeleteForever } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 
 const MyList = () => {
     const { user } = useContext(AuthContext)
     const [mySpots, setMySpots] = useState([])
+    const navigation = useNavigation();
     console.log(mySpots);
 
 
@@ -52,16 +54,23 @@ const MyList = () => {
         });
     }
 
+    if (navigation.state === "loading") {
+        return <div className="flex min-h-screen justify-center items-center mt-28"><span className="loading loading-bars loading-lg text-[#F95A65]"></span></div>
+    }
+
 
     return (
         <div className="w-11/12 mx-auto shadow-xl p-10">
+            <Helmet>
+                <title>My List</title>
+            </Helmet>
             <h2 className="text-4xl font-serif font-semibold text-center mb-8">My List</h2>
             <div>
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
                         <thead>
-                            <tr className="text-lg font-serif font-bold text-gray-700 textce">
+                            <tr className="text-lg font-serif font-bold">
                                 <th></th>
                                 <th>Spot Name</th>
                                 <th>Country</th>

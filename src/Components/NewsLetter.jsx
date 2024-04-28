@@ -20,7 +20,7 @@ const NewsLetter = () => {
     return (
         <div className='bg-[#f8ebec] py-10 mt-8'>
             <div className='mx-auto text-center space-y-3'>
-                <h2 className='text-2xl md:text-4xl font-serif text-center font-semibold'>SIGN-UP TO OUR NEWSLETTER</h2>
+                <h2 className='text-2xl md:text-3xl font-serif text-center font-semibold'>SIGN-UP TO OUR NEWSLETTER</h2>
                 <p className='text-lg font-serif text-center'>Your semi-regular email of the latest research, insights, and platform tips.</p>
                 <button onClick={openModal} className='btn btn-outline text-[#F95A65] text-lg font-bold font-serif'>SIGN UP NOW</button>
             </div>

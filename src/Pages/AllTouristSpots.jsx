@@ -2,6 +2,7 @@ import { useLoaderData, useNavigation } from "react-router-dom";
 import AllSpotsCart from "../Components/AllSpotsCart";
 import { FaChevronDown } from "react-icons/fa6";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const AllTouristSpots = () => {
     const allSpots = useLoaderData();
@@ -26,7 +27,10 @@ const AllTouristSpots = () => {
 
     return (
         <div>
-            <h2 className="text-4xl font-serif font-semibold text-center bg-[#f8ebec] p-6 mb-6">All Tourist Spots</h2>
+            <Helmet>
+                <title>All Tourist Spots</title>
+            </Helmet>
+            <h2 className="text-4xl font-serif font-semibold text-center bg-[#f8ebec] dark: p-6 mb-6">All Tourist Spots</h2>
             <div className="flex justify-center items-center mb-5">
                 <details className="dropdown ">
                     <summary className="m-1 btn text-xl font-serif font-bold bg-[#F95A65] hover:bg-[#F95A65] text-[#fbf3f3]">Sort <FaChevronDown /></summary>

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'  
+import { Helmet } from "react-helmet";
 
 const AddTourist = () => {
     const {user} = useContext(AuthContext)
@@ -46,6 +47,9 @@ const AddTourist = () => {
 
     return (
         <div className="bg-[#F4F3F0] p-10 lg:px-24">
+            <Helmet>
+                <title>Add Tourist Spot</title>
+            </Helmet>
             <h2 className="text-3xl text-center font-bold font-serif text-[#F95A65] mb-6">Add Tourists Spots
             </h2>
             <form onSubmit={handleAddTourist}>

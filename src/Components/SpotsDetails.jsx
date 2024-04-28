@@ -1,17 +1,21 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import { FaLocationDot } from "react-icons/fa6";
 import { TiWeatherSunny } from "react-icons/ti";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import { MdAccessTimeFilled } from "react-icons/md";
+import { Helmet } from 'react-helmet';
 
 const SpotsDetails = () => {
     const spot = useLoaderData();
     console.log(spot);
-    const { _id, country, name, photo, visitor, location, seasonality, description, cost, time, userName, email } = spot;
+    const { country, name, photo, visitor, location, seasonality, description, cost, time, userName, email } = spot;
 
     return (
         <div className='w-11/12 mx-auto shadow-xl rounded-lg p-4 md:p-10 space-y-4'>
+            <Helmet>
+                <title>Details Page</title>
+            </Helmet>
             <h2 className='text-3xl font-serif font-bold'>{country} : {name}</h2>
             <div className='md:flex gap-28 font-serif font-bold '>
                 <p className='flex justify-center items-center gap-2'><FaLocationDot /> : {location}</p>
