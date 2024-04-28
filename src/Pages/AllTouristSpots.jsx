@@ -1,9 +1,16 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import AllSpotsCart from "../Components/AllSpotsCart";
 
 const AllTouristSpots = () => {
     const allSpots = useLoaderData();
     console.log(allSpots);
+
+    const navigation = useNavigation();
+
+    if (navigation.state === "loading") {
+        return <div className="flex min-h-screen justify-center items-center mt-28"><span className="loading loading-bars loading-lg text-[#F95A65]"></span></div>
+    }
+
     return (
         <div>
             <h2 className="text-4xl font-serif font-semibold text-center bg-[#f8ebec] p-6 mb-8">All Tourist Spots</h2>

@@ -11,6 +11,7 @@ import AllTouristSpots from "../Pages/AllTouristSpots";
 import ErrorPage from "../Pages/ErrorPage";
 import MyList from "../Pages/MyList";
 import UpdateSpots from "../Pages/UpdateSpots";
+import PrivateRouter from "./PrivateRouter";
 
 const Router = createBrowserRouter([
     {
@@ -33,21 +34,21 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/addTourist',
-                element: <AddTourist></AddTourist>
+                element: <PrivateRouter><AddTourist></AddTourist></PrivateRouter>
             },
             {
                 path: '/details/:id',
-                element: <SpotsDetails></SpotsDetails>,
+                element: <PrivateRouter><SpotsDetails></SpotsDetails></PrivateRouter>,
                 loader: ({ params }) => fetch(`https://assignment-ten-server-bay.vercel.app/spots/${params.id}`)
 
             },
             {
                 path: '/myList',
-                element: <MyList></MyList>,
+                element: <PrivateRouter><MyList></MyList></PrivateRouter>,
             },
             {
                 path: '/update/:id',
-                element: <UpdateSpots></UpdateSpots>,
+                element: <PrivateRouter><UpdateSpots></UpdateSpots></PrivateRouter>,
             },
             {
                 path: '/allTouristSpots',

@@ -1,12 +1,15 @@
 import { useContext, useState } from "react";
 import { IoEye, IoEyeOff } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
     const { loginUser, googleLogin, githubLogin } = useContext(AuthContext)
+
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -15,6 +18,7 @@ const Login = () => {
         console.log(email, password);
         loginUser(email, password)
             .then(result => {
+                navigate(location?.state ? location.state : '/')
                 toast.success('Login successful')
                 console.log(result.user)
             })
@@ -29,7 +33,7 @@ const Login = () => {
     const handleGoogle = () => {
         googleLogin()
             .then(res => {
-                // navigate(location?.state ? location.state : '/')
+                navigate(location?.state ? location.state : '/')
                 toast.success('Login with Google successfully');
                 console.log(res.user);
             })
@@ -43,7 +47,7 @@ const Login = () => {
     const handleGitHub = () => {
         githubLogin()
             .then(res => {
-                // navigate(location?.state ? location.state : '/')
+                navigate(location?.state ? location.state : '/')
                 toast.success('Login with GitHub successfully');
                 console.log(res.user);
             })

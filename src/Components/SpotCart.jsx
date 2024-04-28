@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 const SpotCart = ({ spot }) => {
     const { _id, country, name, photo, visitor } = spot;
+
+    
+
     return (
         <div className="rounded-md shadow-md bg-gray-900 dark:bg-gray-50 border text-gray-100 dark:text-gray-800">
             <img src={photo} alt="" className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500 dark:bg-gray-500" />

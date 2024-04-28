@@ -1,13 +1,19 @@
 import React from 'react';
 import Banner from '../Components/Banner';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import SpotCart from '../Components/SpotCart';
 import Faq from '../Components/Faq';
 import NewsLetter from '../Components/NewsLetter';
-import Footer from '../Components/Footer';
 
 const Home = () => {
     const touristSpots = useLoaderData()
+
+    const navigation = useNavigation();
+
+    if (navigation.state === "loading") {
+        return <div className="flex min-h-screen justify-center items-center mt-28"><span className="loading loading-bars loading-lg text-[#F95A65]"></span></div>
+    }
+    
     return (
         <div>
             <Banner></Banner>
