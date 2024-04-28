@@ -11,8 +11,9 @@ Wanderlust Explorer is your ultimate guide to exploring the world's most captiva
 - Discover Diverse Destinations: Explore tourist spots across various countries, each offering unique experiences and cultural insights.
 - Vibrant Visuals: Immerse yourself in stunning images capturing the beauty and allure of each destination.
 - Informative Descriptions: Learn about the history, significance, and must-see attractions of each tourist spot through detailed descriptions.
-- Plan Your Adventures: Access practical travel tips, including accommodation recommendations, transportation options, and insider insights.
+- Responsive Design: Enjoy a seamless experience across devices of all sizes.
 - Stay Updated: Keep up-to-date with the latest travel news, trends, and destination highlights to plan your next adventure with confidence.
+- User-Friendly Interface: Enjoy a seamless browsing experience with our user-friendly interface designed to make your Travel journey smooth and enjoyable.
 
 
 ## Technology used
@@ -29,4 +30,5 @@ Wanderlust Explorer is your ultimate guide to exploring the world's most captiva
 - Mumba Ui
 - Lottie React
 - React Awesome reveal
+- React Sweet Alert
 
