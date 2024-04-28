@@ -58,7 +58,7 @@ const UpdateSpots = () => {
     }
 
     return (
-        <div className="bg-[#F4F3F0] p-10 lg:px-24">
+        <div className="bg-[#F4F3F0] p-10 lg:px-24 w-11/12 mx-auto shadow-xl my-6 rounded-md">
             <Helmet>
                 <title>Update Page</title>
             </Helmet>
