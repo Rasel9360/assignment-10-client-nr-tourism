@@ -7,7 +7,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    const [them, setThem] = useState('');
+    const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
 
 
     const handleSignOut = () => {
@@ -21,20 +21,14 @@ const Navbar = () => {
 
 
     const handleTheme = (e) => {
-        if (e.target.checked) {
-            setThem('dark')
-        }
-        else {
-            setThem('light')
-        }
+        const selectedTheme = e.target.checked ? 'dark' : 'light';
+        setTheme(selectedTheme)
     }
 
     useEffect(() => {
-        const currentThem = localStorage.getItem('theme');
-        localStorage.setItem("theme", them || currentThem);
-        const localThem = localStorage.getItem('theme');
-        document.querySelector('html').setAttribute('data-theme', localThem);
-    }, [them])
+        localStorage.setItem('theme', theme);
+        document.querySelector('html').setAttribute('data-theme', theme);
+    }, [theme]);
 
     const navLinks = <>
         <li><NavLink to='/' className={'text-sm font-bold'}>Home</NavLink></li>
