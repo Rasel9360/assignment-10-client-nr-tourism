@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const AllSpotsCart = ({ spot }) => {
     const { _id, name, photo, visitor, cost, time, seasonality } = spot;
     return (
-        <div className="rounded-md shadow-md border flex flex-col">
+        <div data-aos="fade-up" data-aos-duration="2000" className="rounded-md shadow-md border flex flex-col">
             <img src={photo} alt="" className="object-cover object-center w-full rounded-t-md h-72 " />
             <div className="flex flex-col justify-between p-6 space-y-8 flex-grow">
                 <div className="space-y-2">

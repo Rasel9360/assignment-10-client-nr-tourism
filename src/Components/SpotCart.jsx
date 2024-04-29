@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const SpotCart = ({ spot }) => {
     const { _id, country, name, photo, visitor } = spot;
@@ -7,7 +10,7 @@ const SpotCart = ({ spot }) => {
     
 
     return (
-        <div className="rounded-md shadow-md border flex flex-col">
+        <div data-aos="fade-up" data-aos-duration="2000" className="rounded-md shadow-md border flex flex-col">
             <img src={photo} alt="" className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500 dark:bg-gray-500" />
             <div className="flex flex-col justify-between p-6 space-y-8 flex-grow">
                 <div className="space-y-2">
