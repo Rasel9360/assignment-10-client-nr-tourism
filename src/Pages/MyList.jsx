@@ -60,7 +60,7 @@ const MyList = () => {
 
 
     return (
-        <div className="w-11/12 mx-auto shadow-xl p-10">
+        <div className="w-11/12 mx-auto min-h-[calc(100vh-497px)] shadow-xl p-10">
             <Helmet>
                 <title>My List</title>
             </Helmet>
@@ -88,7 +88,7 @@ const MyList = () => {
                                         <td>{spot.name}</td>
                                         <td>{spot.country}</td>
                                         <td>{spot.location}</td>
-                                        <td>{spot.cost} taka per person</td>
+                                        <td>{spot.cost} BDT per person</td>
                                         <td><button onClick={() => (handleDelete(spot._id))} className="text-xl text-red-700 "><MdDeleteForever /></button></td>
                                         <td><Link to={`/update/${spot._id}`}><button className="text-xl"><FaEdit /></button></Link></td>
                                     </tr>

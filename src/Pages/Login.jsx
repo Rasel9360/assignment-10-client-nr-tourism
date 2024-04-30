@@ -90,18 +90,19 @@ const Login = () => {
                             <a href="#" className="label-text-alt link link-hover text-sm font-bold font-serif">Forgot password?</a>
                         </label>
                     </div>
-                    <div className="form-control mt-6">
+                    <div className="form-control">
                         <button className="btn text-white text-xl bg-[#F95A65] hover:bg-[#f24652]">Login</button>
                     </div>
                 </form>
                 <div>
-                    <p className="text-center">New on our platform? <Link to='/register'><span className="btn btn-link">Create an account</span></Link></p>
+                    <p className="text-center">New on our platform?<Link to='/register'><span className="btn btn-link">Create an account</span></Link></p>
                 </div>
                 <div className="flex items-center pt-4 space-x-1">
-                    <div className="flex-1 h-px sm:w-16 dark:bg-gray-400"></div>
-                    <p className="px-3 text-sm dark:text-gray-600 font-bold">Login with</p>
-                    <div className="flex-1 h-px sm:w-16 dark:bg-gray-400"></div>
+                    <div className="flex-1 h-px border sm:w-16 dark:bg-gray-300"></div>
+                    <p className="px-3 text-sm dark:text-gray-600 font-serif font-bold">Login with</p>
+                    <div className="flex-1 h-px sm:w-16 border dark:bg-gray-300"></div>
                 </div>
+
                 <div className="flex justify-center space-x-3 mb-5">
                     <button onClick={handleGoogle} aria-label="Log in with Google" className="p-3 rounded-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 fill-current">

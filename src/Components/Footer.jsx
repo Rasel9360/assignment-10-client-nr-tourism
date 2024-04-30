@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <footer className="text-center space-y-10 p-10 bg-blue-950  text-white">
             <nav className="grid grid-flow-col gap-4">
-                <Link to='/' className="text-4xl font-bold font-serif"><span className="text-[#F95A65]">NR</span> Tourism</Link>
+                <a href='#' className="text-4xl font-bold font-serif"><span className="text-[#F95A65]">NR</span> Tourism</a>
             </nav>
             <div className='md:flex justify-center md:gap-28'>
                 <nav className='text-lg text-start'>
