@@ -3,6 +3,7 @@ import { IoEye, IoEyeOff } from "react-icons/io5";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
@@ -58,10 +59,10 @@ const Login = () => {
     }
 
     return (
-        <div className="hero min-h-screen bg-base-200">
-            {/* <Helmet>
+        <div className="hero min-h-[calc(100vh-497px)] py-6  bg-base-200">
+            <Helmet>
                 <title>Login Page</title>
-            </Helmet> */}
+            </Helmet>
             <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
                 <h1 className="text-3xl  mt-5 font-serif text-center font-bold">Please Login</h1>
                 <form onSubmit={handleLogin} className="card-body">

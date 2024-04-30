@@ -4,6 +4,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import auth from '../Firebase/firebase.config';
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
     const { createUser, logOut } = useContext(AuthContext)
@@ -56,10 +57,10 @@ const Register = () => {
         e.target.reset();
     }
     return (
-        <div className="hero min-h-screen bg-base-200 ">
-            {/* <Helmet>
-            <title>Sign Up</title>
-        </Helmet> */}
+        <div className="hero min-h-[calc(100vh-497px)] py-6 bg-base-200 ">
+            <Helmet>
+                <title>Sign Up</title>
+            </Helmet>
             <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100 ">
                 <h1 className="text-3xl  mt-5 font-serif text-center font-bold">Create An Account</h1>
                 <form onSubmit={handleSignUp} className="card-body">
